@@ -232,6 +232,39 @@ footer.rodape{background:#0A1F19;color:rgba(244,239,228,.7);padding:56px 0 110px
 .rev{opacity:0;transform:translateY(40px) scale(.985);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
 .rev.vis{opacity:1;transform:none}
 
+/* Faixa horizontal de artistas */
+.hscroll{position:relative}
+.hs-sticky{padding:clamp(80px,10vw,130px) 0 40px;overflow:hidden}
+.hs-cab{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(36px,4vw,56px)}
+.hs-cab .titulo{margin-bottom:0}
+.hs-trilho{display:flex;gap:22px;padding:0 max(var(--gutter),calc((100vw - var(--max))/2 + var(--gutter)));width:max-content;will-change:transform}
+.art{margin:0;width:clamp(230px,22vw,320px);flex:none}
+.art img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;transition:transform .8s var(--ease)}
+.art:hover img{transform:scale(1.02)}
+.art figcaption{margin-top:14px;display:flex;flex-direction:column;gap:2px}
+.art figcaption b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.15}
+.art figcaption span{font-size:13px;font-weight:700;opacity:.55}
+.art:nth-child(even){margin-top:48px}
+.art-fim{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;aspect-ratio:4/5;background:var(--verde);color:var(--marfim);padding:32px;border-radius:2px;align-self:flex-start}
+.art-fim p{font-family:var(--serif);font-size:34px;line-height:1.1;margin:0}
+.outros{padding-bottom:clamp(80px,10vw,130px)}
+.outros-t{font-size:13px;font-weight:700;letter-spacing:.04em;opacity:.6;margin:clamp(30px,4vw,60px) 0 16px}
+.outros .artistas{font-size:clamp(26px,3.2vw,44px)}
+.depo2{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,80px);align-items:center;margin-top:clamp(70px,9vw,120px);padding-top:clamp(50px,6vw,80px);border-top:1px solid rgba(22,33,29,.12)}
+.depo2 figure{margin:0}
+.depo2 img{width:100%;border-radius:2px}
+.depo2 blockquote p{font-size:clamp(24px,2.6vw,36px)}
+@media (min-width:1001px){
+  .hscroll.ativo .hs-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:90px 0 30px}
+}
+@media (max-width:1000px){
+  .hs-cab{grid-template-columns:1fr;gap:18px}
+  .hs-trilho{width:auto;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--gutter);padding-left:var(--gutter);padding-right:var(--gutter);-webkit-overflow-scrolling:touch;padding-bottom:16px;scrollbar-width:none}
+  .hs-trilho::-webkit-scrollbar{display:none}
+  .art{width:72vw;max-width:300px;scroll-snap-align:start}
+  .art:nth-child(even){margin-top:0}
+  .depo2{grid-template-columns:1fr}
+}
 /* Responsivo */
 @media (max-width:1000px){
   .nav ul,.nav .nav-cta{display:none}
@@ -435,21 +468,35 @@ try{if(sessionStorage.getItem('lunarts-abertura')||matchMedia('(prefers-reduced-
   </div>
 </section>
 
-<section class="sec sec-papel" id="artistas" aria-labelledby="h-art">
-  <div class="wrap">
-    <div class="cab">
-      <h2 class="titulo" id="h-art" data-palavras>Canções que já são <em>cuidadas pela Lunarts.</em></h2>
-      <p class="sub">Cantores e compositores que confiaram suas obras à Lunarts.</p>
+<section class="sec-papel" id="artistas" aria-labelledby="h-art">
+  <div class="hscroll" id="hscroll">
+    <div class="hs-sticky">
+      <div class="wrap hs-cab">
+        <h2 class="titulo" id="h-art" data-palavras>Quem já confia as canções <em>à Lunarts.</em></h2>
+        <p class="sub">Cantores e compositores de todo o Nordeste e até de Portugal. Muitos deles, lado a lado com o Roberto.</p>
+      </div>
+      <div class="hs-trilho" id="trilho">
+        <figure class="art"><img src="/assets/img/artistas/samuel-mariano.webp" alt="Samuel Mariano ao lado de Roberto Luna" width="480" height="600" loading="lazy"><figcaption><b>Samuel Mariano</b><span>com Roberto Luna</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/leandro-borges.webp" alt="Leandro Borges ao lado de Roberto Luna" width="480" height="600" loading="lazy"><figcaption><b>Leandro Borges</b><span>com Roberto Luna</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/chagas-sobrinho.webp" alt="Chagas Sobrinho ao lado de Roberto Luna" width="480" height="600" loading="lazy"><figcaption><b>Chagas Sobrinho</b><span>com Roberto Luna</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/cicero-nogueira.webp" alt="Cícero Nogueira ao lado de Roberto Luna" width="480" height="600" loading="lazy"><figcaption><b>Cícero Nogueira</b><span>com Roberto Luna</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/jonatas-fonseca.webp" alt="Jônatas Fonseca ao lado de Roberto Luna" width="480" height="600" loading="lazy"><figcaption><b>Jônatas Fonseca</b><span>com Roberto Luna</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/daniel-sena.webp" alt="Daniel Sena ao lado de Roberto Luna" width="480" height="600" loading="lazy"><figcaption><b>Daniel Sena</b><span>Portugal, com Roberto Luna</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/emerson-augusto.webp" alt="Emerson Augusto" width="480" height="600" loading="lazy"><figcaption><b>Emerson Augusto</b><span>cantor e compositor</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/esteves-jacinto.webp" alt="Esteves Jacinto" width="480" height="600" loading="lazy"><figcaption><b>Esteves Jacinto</b><span>cantor e compositor</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/abdi-saddai-samela.webp" alt="Abdi Saddai e Sâmela" width="480" height="600" loading="lazy"><figcaption><b>Abdi Saddai e Sâmela</b><span>dupla</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/marcio-dani-macedo.webp" alt="Márcio e Dani Macedo" width="480" height="600" loading="lazy"><figcaption><b>Márcio e Dani Macedo</b><span>dupla</span></figcaption></figure>
+        <figure class="art"><img src="/assets/img/artistas/alice-maciel.webp" alt="Alice Maciel" width="480" height="600" loading="lazy"><figcaption><b>Alice Maciel</b><span>cantora e sanfoneira</span></figcaption></figure>
+        <div class="art art-fim"><p>E a lista continua.</p><a class="btn btn-latao" data-zap href="https://wa.me/5584988087189">Quero fazer parte</a></div>
+      </div>
     </div>
+  </div>
+  <div class="wrap outros">
+    <p class="outros-t">Também fazem parte</p>
     <ul class="artistas">
-      <li><span>Leandro Borges</span></li>
-      <li><span>Samuel Mariano</span></li>
-      <li><span>Cícero Nogueira</span></li>
-      <li><span>Jônatas Fonseca</span></li>
       <li><span>Rayanne Vanessa</span></li>
       <li><span>Eunice Ferreira</span></li>
       <li><span>Shirley Carvalho</span></li>
-      <li><span>Alice Maciel</span></li>
       <li><span>Kleyton Queiroz</span></li>
       <li><span>Gisele Nascimento</span></li>
       <li><span>Júnior Acordeon</span></li>
@@ -467,6 +514,13 @@ try{if(sessionStorage.getItem('lunarts-abertura')||matchMedia('(prefers-reduced-
       <blockquote>
         <p>É maravilhoso você estar em casa e entrar um dinheiro na sua conta de músicas que foram tocadas por aí afora, nas rádios.</p>
         <footer><b>Samuel Mariano</b>Cantor e compositor, João Pessoa/PB</footer>
+      </blockquote>
+    </div>
+    <div class="depo2 rev">
+      <figure><img src="/assets/img/artistas/leandro-equipe.webp" alt="Leandro Borges com Roberto Luna e a equipe da Lunarts" width="690" height="425" loading="lazy"></figure>
+      <blockquote>
+        <p>Equipe Lunarts! Editora do meu coração! Unidos para lançar mais uma obra que vai marcar nossa geração.</p>
+        <footer><b>Leandro Borges</b>Cantor e compositor</footer>
       </blockquote>
     </div>
   </div>
@@ -618,6 +672,22 @@ try{if(sessionStorage.getItem('lunarts-abertura')||matchMedia('(prefers-reduced-
   // Serviços: cartões que empilham (só desktop)
   var cards=Array.from(d.querySelectorAll('.card')), desk=matchMedia('(min-width:1001px)');
 
+
+  // Faixa horizontal: a rolagem vertical move os cards para o lado (desktop)
+  var hs=d.getElementById('hscroll'), tr=d.getElementById('trilho');
+  function medir(){
+    if(desk.matches && !reduz){
+      var extra=Math.max(0,tr.scrollWidth-innerWidth);
+      hs.classList.add('ativo'); hs.style.height=(innerHeight+extra)+'px'; hs.dataset.extra=extra;
+    } else { hs.classList.remove('ativo'); hs.style.height=''; tr.style.transform=''; hs.dataset.extra=0; }
+  }
+  function moverTrilho(){
+    var extra=+hs.dataset.extra||0; if(!extra)return;
+    var r=hs.getBoundingClientRect(), p=Math.min(1,Math.max(0,-r.top/extra));
+    tr.style.transform='translate3d('+(-p*extra)+'px,0,0)';
+  }
+  addEventListener('resize',function(){medir();moverTrilho();});
+  addEventListener('load',function(){medir();moverTrilho();});
   var tick=false;
   function onScroll(){
     if(tick)return; tick=true;
@@ -635,13 +705,14 @@ try{if(sessionStorage.getItem('lunarts-abertura')||matchMedia('(prefers-reduced-
           cards[k].style.filter='brightness('+(1-sobre*0.25)+')';
         }
       }
+      moverTrilho();
       // botão do WhatsApp some na chamada final e no rodapé
       var rod=d.querySelector('.rodape').getBoundingClientRect();
       d.getElementById('zap').classList.toggle('oculto', rod.top < vh-40 || scrollY < vh*0.6);
     });
   }
   if(reduz){ ws.forEach(function(w){w.classList.add('on')}); }
-  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); onScroll();
+  medir(); addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); onScroll();
 })();
 </script>
 </body>
