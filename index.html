@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lunarts Edições Musicais | Direitos autorais para cantores e compositores em Natal/RN</title>
+<meta name="description" content="Sua música toca em rádios, igrejas e plataformas? A Lunarts, do cantor e compositor Roberto Luna, registra suas músicas no ECAD e cuida dos seus direitos autorais. Natal/RN e todo o Brasil.">
+<meta name="theme-color" content="#0E2A22">
+<link rel="canonical" href="https://lunartsedicoes.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lunarts Edições Musicais | Sua música tocou. O dinheiro dela chegou até você?">
+<meta property="og:description" content="Registro no ECAD e cuidado com os direitos autorais de cantores, compositores, músicos e produtores. Natal/RN e todo o Brasil.">
+<meta property="og:image" content="/assets/img/og-lunarts.jpg">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/assets/img/hero-roberto.webp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Lunarts Edições Musicais","founder":{"@type":"Person","name":"Roberto Luna"},"description":"Editora musical que registra músicas no ECAD e administra direitos autorais de cantores, compositores, músicos e produtores fonográficos.","areaServed":"BR","address":{"@type":"PostalAddress","addressLocality":"Natal","addressRegion":"RN","addressCountry":"BR"},"telephone":"+55 84 98808-7189","email":"roberto.lunarts@hotmail.com","url":"https://lunartsedicoes.com.br/","image":"https://lunartsedicoes.com.br/assets/img/og-lunarts.jpg","sameAs":["https://www.instagram.com/robertolunarts/"]}
+</script>
+<style>
+:root{
+  --verde:#0E2A22; --verde-2:#15382E; --verde-3:#1E4A3D;
+  --marfim:#F4EFE4; --marfim-2:#EAE2D2; --tinta:#16211D;
+  --latao:#B8924A; --latao-claro:#D7B878; --turquesa:#3FB6A8;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gutter:clamp(20px,5vw,72px);
+  --max:1240px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--marfim);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.04;margin:0;letter-spacing:-.015em}
+h1 em,h2 em,h3 em{font-style:italic;color:var(--latao)}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--latao);outline-offset:3px}
+
+/* Pauta musical */
+.pauta{height:34px;background:repeating-linear-gradient(to bottom,currentColor 0 1px,transparent 1px 8px);opacity:.14;width:100%}
+.pauta-sec{color:var(--tinta);padding:0 var(--gutter)}
+.sec-verde .pauta-sec,.sec-verde .pauta{color:var(--marfim)}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:14px 26px;border-radius:4px;font-family:var(--sans);font-weight:700;font-size:15px;text-decoration:none;letter-spacing:.01em;transition:transform .35s var(--ease),background .3s,color .3s;cursor:pointer;border:0}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-latao{background:var(--latao);color:var(--verde)}
+.btn-latao:hover{background:var(--latao-claro);transform:translateY(-2px)}
+.btn-linha{background:transparent;color:inherit;box-shadow:inset 0 0 0 1px currentColor}
+.btn-linha:hover{background:rgba(184,146,74,.12)}
+
+/* Abertura */
+#abertura{position:fixed;inset:0;z-index:100;background:var(--verde);display:grid;place-items:center;transition:transform .9s var(--ease) .1s,visibility 0s 1s;cursor:pointer}
+#abertura.fim{transform:translateY(-100%);visibility:hidden}
+#abertura .logo-wrap{width:min(260px,60vw);clip-path:inset(0 100% 0 0);animation:escrever 1.1s var(--ease) .15s forwards}
+#abertura .pular{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(244,239,228,.55);font-size:12px;letter-spacing:.08em;background:none;border:0;font-family:var(--sans);cursor:pointer;min-height:44px;padding:0 16px}
+@keyframes escrever{to{clip-path:inset(0 0 0 0)}}
+html.sem-abertura #abertura{display:none}
+
+/* Navbar */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav.solida{background:rgba(14,42,34,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(244,239,228,.08)}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--marfim)}
+.marca img{width:46px;height:auto}
+.marca span{font-family:var(--serif);font-size:22px;letter-spacing:.02em}
+.nav ul{display:flex;gap:34px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--marfim);text-decoration:none;font-size:14px;font-weight:700;opacity:.82;transition:opacity .2s}
+.nav ul a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:10px 18px;font-size:14px}
+.menu-btn{display:none;width:48px;height:48px;border:0;background:none;color:var(--marfim);cursor:pointer;padding:12px}
+.menu-btn span{display:block;height:2px;background:currentColor;margin:5px 0;transition:transform .3s,opacity .3s}
+.nav.aberto .menu-btn span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.aberto .menu-btn span:nth-child(2){opacity:0}
+.nav.aberto .menu-btn span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;background:var(--verde);color:var(--marfim);padding:150px 0 0;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;left:0;right:0;top:42%;height:96px;background:repeating-linear-gradient(to bottom,rgba(244,239,228,.07) 0 1px,transparent 1px 24px);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,80px);align-items:end}
+.hero h1{font-size:clamp(42px,5.4vw,82px);font-weight:300;max-width:14ch;text-wrap:balance}
+.hero h1 em{font-weight:400}
+.onda{display:block;width:min(440px,90%);height:44px;margin:26px 0 30px;overflow:visible}
+.onda path{fill:none;stroke:var(--latao);stroke-width:1.6;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200}
+.pronto .onda path{animation:tracar 2.2s var(--ease) .3s forwards}
+@keyframes tracar{to{stroke-dashoffset:0}}
+.hero p.lead{font-size:clamp(17px,1.5vw,19px);max-width:46ch;color:rgba(244,239,228,.8);margin-bottom:34px}
+.hero-acoes{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:clamp(60px,9vw,120px)}
+.hero-acoes small{font-size:13px;color:rgba(244,239,228,.6);max-width:24ch;line-height:1.4}
+.hero-foto{position:relative;align-self:stretch;min-height:560px}
+.hero-foto figure{margin:0;position:absolute;inset:0;overflow:hidden}
+.hero-foto img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:none;object-fit:contain;object-position:bottom}
+.faixas{position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);pointer-events:none}
+.faixas i{background:var(--verde);transform-origin:top;transition:transform 1s var(--ease)}
+.pronto .faixas i{transform:scaleY(0)}
+.faixas i:nth-child(2){transition-delay:.07s}.faixas i:nth-child(3){transition-delay:.14s}.faixas i:nth-child(4){transition-delay:.21s}.faixas i:nth-child(5){transition-delay:.28s}.faixas i:nth-child(6){transition-delay:.35s}
+.selo{position:absolute;left:-58px;bottom:70px;width:132px;height:132px;z-index:2}
+.selo svg{width:100%;height:100%;animation:girar 22s linear infinite}
+.selo text{font-family:var(--sans);font-size:9.6px;font-weight:700;letter-spacing:.2em;fill:var(--marfim)}
+.selo::after{content:"";position:absolute;inset:36%;background:url(/assets/img/logo-lunarts.webp) center/contain no-repeat}
+.selo-fundo{position:absolute;inset:0;border-radius:50%;background:var(--verde);box-shadow:0 0 0 1px rgba(184,146,74,.6)}
+@keyframes girar{to{transform:rotate(360deg)}}
+
+/* Manifesto */
+.manifesto{background:var(--verde);color:var(--marfim);padding:clamp(90px,14vw,180px) 0}
+.manifesto p{font-family:var(--serif);font-size:clamp(30px,4.4vw,62px);line-height:1.14;font-weight:300;max-width:20ch;margin:0;letter-spacing:-.01em}
+.manifesto .w{color:rgba(244,239,228,.16);transition:color .25s}
+.manifesto .w.on{color:var(--marfim)}
+.manifesto .w.on.d{color:var(--latao-claro);font-style:italic}
+
+/* Títulos de seção */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec-verde{background:var(--verde);color:var(--marfim)}
+.sec-papel{background:var(--marfim-2)}
+.titulo{font-size:clamp(36px,4.8vw,68px);max-width:16ch;margin-bottom:22px}
+.sub{font-size:18px;max-width:52ch;opacity:.78}
+.cab{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.palavra{display:inline-block;opacity:0;transform:translateY(.4em);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.vis .palavra{opacity:1;transform:none}
+
+/* Serviços */
+.pilha{display:grid;gap:22px}
+.card{position:sticky;top:110px;background:var(--marfim);border:1px solid rgba(22,33,29,.12);border-radius:4px;padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:120px 1fr 1fr;gap:clamp(20px,4vw,60px);align-items:start;transform-origin:top center;transition:transform .2s linear,filter .2s linear;box-shadow:0 30px 60px -40px rgba(14,42,34,.35)}
+.card:nth-child(2){top:130px}.card:nth-child(3){top:150px}.card:nth-child(4){top:170px}
+.card .n{font-family:var(--serif);font-size:72px;line-height:.9;color:var(--latao);font-weight:300}
+.card h3{font-size:clamp(28px,2.8vw,40px)}
+.card p{margin:0;opacity:.8}
+.card.escuro{background:var(--verde);color:var(--marfim);border-color:transparent}
+.card.escuro p{opacity:.75}
+.para-quem{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.para-quem span{font-size:13px;font-weight:700;padding:8px 14px;border:1px solid rgba(22,33,29,.2);border-radius:40px}
+.card.escuro .para-quem span{border-color:rgba(244,239,228,.25)}
+
+/* Como funciona */
+.linha{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding-top:56px}
+.linha::before,.linha .progresso{content:"";position:absolute;top:18px;left:0;height:1px;background:rgba(244,239,228,.2);right:0}
+.linha .progresso{background:var(--latao);right:auto;width:0;transition:width 1.6s var(--ease)}
+.vis .linha .progresso,.linha.vis .progresso{width:100%}
+.passo{position:relative}
+.passo::before{content:"";position:absolute;top:-44px;left:0;width:14px;height:14px;border-radius:50%;background:var(--verde);box-shadow:inset 0 0 0 1px rgba(244,239,228,.4);transition:background .4s,box-shadow .4s}
+.passo.on::before{background:var(--latao);box-shadow:0 0 0 6px rgba(184,146,74,.18)}
+.passo b{display:block;font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:10px;line-height:1.15}
+.passo p{font-size:15.5px;opacity:.72;margin:0}
+.passo .t{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--latao-claro);margin-bottom:8px;display:block}
+
+/* Diferenciais (bento) */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.b{border-radius:4px;padding:clamp(26px,3vw,40px);background:var(--marfim);border:1px solid rgba(22,33,29,.1);display:flex;flex-direction:column;justify-content:space-between;min-height:230px;overflow:hidden;position:relative}
+.b h3{font-size:clamp(24px,2.3vw,32px);margin-bottom:12px}
+.b p{margin:0;opacity:.78;font-size:16px}
+.b1{grid-column:span 7;grid-row:span 2;background:var(--verde);color:var(--marfim);padding:0}
+.b1 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.b1 .txt{position:relative;margin-top:auto;padding:clamp(26px,3vw,44px);background:linear-gradient(to top,rgba(14,42,34,.96) 30%,rgba(14,42,34,0))}
+.b1 .txt p{opacity:.82}
+.b2{grid-column:span 5}
+.b3{grid-column:span 5;background:var(--latao);border-color:transparent;color:var(--verde)}
+.b3 p{opacity:.85}
+.b4{grid-column:span 4}
+.b5{grid-column:span 8;flex-direction:row;align-items:center;gap:32px}
+.b5 .grande{font-family:var(--serif);font-size:clamp(48px,6vw,84px);line-height:.9;color:var(--latao);font-weight:300;flex:none}
+.b .ico{width:36px;height:36px;color:var(--latao);margin-bottom:22px}
+
+/* Artistas */
+.artistas{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 0;font-family:var(--serif);font-size:clamp(28px,4.4vw,60px);line-height:1.2;font-weight:300}
+.artistas li{white-space:nowrap}
+.artistas li::after{content:"/";color:var(--latao);margin:0 .35em;font-weight:300}
+.artistas li:last-child::after{content:""}
+.artistas li:nth-child(3n+2){font-style:italic}
+.artistas li span{transition:color .3s}
+.artistas li:hover span{color:var(--latao)}
+.nota{margin-top:36px;font-size:15px;opacity:.65;max-width:60ch}
+
+/* Depoimento */
+.depo{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,80px);align-items:start}
+.aspas{font-family:var(--serif);font-size:clamp(120px,16vw,220px);line-height:.7;color:var(--latao);font-style:italic}
+blockquote{margin:0}
+blockquote p{font-family:var(--serif);font-size:clamp(28px,3.4vw,46px);line-height:1.2;font-weight:300;max-width:24ch;margin-bottom:28px}
+blockquote footer{font-size:15px}
+blockquote footer b{display:block;font-size:17px}
+.depo-vazio{margin-top:56px;padding-top:28px;border-top:1px solid rgba(22,33,29,.14);font-size:15px;opacity:.6}
+
+/* Sobre */
+.sobre{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(40px,7vw,110px);align-items:center}
+.moldura{position:relative;padding:14px;border:1px solid var(--latao);margin:0;width:100%}
+.painel{background:var(--verde);overflow:hidden;aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center;background-image:repeating-linear-gradient(to bottom,rgba(244,239,228,.07) 0 1px,transparent 1px 22px);background-size:100% 110px;background-repeat:no-repeat;background-position:0 30%}
+.painel img{width:108%;max-width:none;height:auto;margin-bottom:-2px}
+.moldura figcaption{font-family:var(--serif);font-style:italic;font-size:15px;margin-top:14px;opacity:.75}
+.numeros{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:40px 0 34px;padding:28px 0;border-top:1px solid rgba(22,33,29,.15);border-bottom:1px solid rgba(22,33,29,.15)}
+.num{font-family:var(--serif);font-size:clamp(40px,4.6vw,64px);line-height:1;color:var(--verde);font-weight:300;font-variant-numeric:tabular-nums}
+.num-l{display:block;font-size:13px;font-weight:700;margin-top:8px;opacity:.7;line-height:1.35}
+
+/* Atendimento */
+.atend{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px)}
+.contato-lista{list-style:none;margin:0;padding:0}
+.contato-lista li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(244,239,228,.14)}
+.contato-lista li:first-child{border-top:1px solid rgba(244,239,228,.14)}
+.contato-lista dt,.contato-lista .k{font-size:13px;font-weight:700;opacity:.6;padding-top:4px}
+.contato-lista .v{font-family:var(--serif);font-size:clamp(19px,1.8vw,24px);line-height:1.3;overflow-wrap:anywhere}
+.contato-lista .v.email{font-size:clamp(17px,1.5vw,21px)}
+.contato-lista a{text-decoration:none;border-bottom:1px solid rgba(184,146,74,.6)}
+.contato-lista a:hover{color:var(--latao-claro)}
+
+/* Chamada final */
+.final{background:var(--marfim);text-align:left}
+.final .titulo{max-width:18ch;font-size:clamp(42px,6vw,88px)}
+.final-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:end}
+
+/* Rodapé */
+footer.rodape{background:#0A1F19;color:rgba(244,239,228,.7);padding:56px 0 110px;font-size:14px}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:center}
+.rodape img{width:120px}
+.rodape a{text-decoration:none;color:var(--marfim);min-height:44px;display:inline-flex;align-items:center}
+.rodape nav{display:flex;gap:28px;flex-wrap:wrap}
+
+/* WhatsApp fixo */
+.zap{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:#1F9D55;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .3s var(--ease),opacity .3s}
+.zap:hover{transform:scale(1.06)}
+.zap svg{width:30px;height:30px}
+.zap.oculto{opacity:0;pointer-events:none;transform:translateY(20px)}
+
+/* Revelação de imagens */
+.rev{opacity:0;transform:translateY(40px) scale(.985);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.rev.vis{opacity:1;transform:none}
+
+/* Responsivo */
+@media (max-width:1000px){
+  .nav ul,.nav .nav-cta{display:none}
+  .menu-btn{display:block}
+  .nav.aberto{background:var(--verde)}
+  .nav.aberto ul{display:flex;flex-direction:column;gap:0;position:absolute;top:76px;left:0;right:0;background:var(--verde);padding:8px var(--gutter) 28px;border-top:1px solid rgba(244,239,228,.1)}
+  .nav.aberto ul a{display:flex;align-items:center;min-height:52px;font-size:18px;border-bottom:1px solid rgba(244,239,228,.08)}
+  .hero-grid,.cab,.sobre,.atend,.final-grid{grid-template-columns:1fr}
+  .hero{padding-top:120px}
+  .hero-grid>div:first-child{display:contents}
+  .hero h1{order:1}.onda{order:2}.hero-foto{order:3}.hero p.lead{order:4;margin-top:28px}.hero-acoes{order:5}
+  .hero-grid{gap:0}
+  .hero::before{top:auto;bottom:52%}
+  .hero-foto{min-height:400px;margin:0 calc(var(--gutter) * -1)}
+  .hero-acoes{margin-bottom:48px}
+  .selo{left:auto;right:20px;bottom:auto;top:-56px;width:108px;height:108px}
+  .card{grid-template-columns:1fr;position:relative;top:auto!important;transform:none!important;filter:none!important}
+  .card .n{font-size:54px}
+  .linha{grid-template-columns:1fr 1fr;gap:56px 28px}
+  .linha::before,.linha .progresso{display:none}
+  .passo::before{top:-28px}
+  .b1,.b2,.b3,.b4,.b5{grid-column:span 12}
+  .b1{min-height:440px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .linha{grid-template-columns:1fr;gap:40px;padding-left:28px;padding-top:0}
+  .linha::before{display:block;top:6px;bottom:0;left:6px;right:auto;width:1px;height:auto}
+  .passo::before{top:6px;left:-28px}
+  .b5{flex-direction:column;align-items:flex-start;gap:12px}
+  .numeros{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .num-l{font-size:11.5px}
+  .contato-lista li{grid-template-columns:1fr;gap:4px}
+  .depo{grid-template-columns:1fr}
+  .aspas{font-size:110px;margin-bottom:-30px}
+  .artistas{font-size:28px}
+  .artistas li{white-space:normal}
+  .hero-acoes .btn{width:100%;justify-content:center}
+  .hero-acoes small{max-width:none}
+  .zap{width:56px;height:56px;right:14px;bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  #abertura{display:none}
+  .palavra,.rev{opacity:1;transform:none}
+  .onda path{stroke-dashoffset:0}
+  .faixas{display:none}
+  .manifesto .w{color:var(--marfim)}
+}
+</style>
+<script>
+try{if(sessionStorage.getItem('lunarts-abertura')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('sem-abertura')}catch(e){}
+</script>
+</head>
+<body>
+
+<div id="abertura" aria-hidden="true">
+  <div class="logo-wrap"><img src="/assets/img/logo-lunarts.webp" alt="" width="583" height="501"></div>
+  <button class="pular" type="button" tabindex="-1">pular</button>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Lunarts Edições Musicais, início">
+      <img src="/assets/img/logo-marca.webp" alt="" width="200" height="105">
+      <span>Lunarts</span>
+    </a>
+    <nav aria-label="Menu principal">
+      <ul id="menu">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#artistas">Artistas</a></li>
+        <li><a href="#sobre">Roberto Luna</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-latao nav-cta" data-zap href="https://wa.me/5584988087189">Falar com o Roberto</a>
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero" aria-labelledby="h-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="h-hero">Sua música tocou. O&nbsp;dinheiro dela <em>chegou até você?</em></h1>
+      <svg class="onda" viewBox="0 0 440 44" aria-hidden="true"><path d="M2 22 C 20 22, 26 8, 38 8 S 54 36, 66 36 S 82 4, 96 4 S 112 40, 126 40 S 142 12, 156 12 S 170 30, 182 30 S 196 18, 208 18 S 222 26, 236 24 S 262 22, 290 22 C 330 22, 352 30, 372 30 C 394 30, 408 10, 420 4 C 426 1, 432 2, 438 6"/></svg>
+      <p class="lead">Toda vez que uma canção sua toca no rádio, na igreja, num show ou no streaming, ela gera direito autoral. A Lunarts registra suas músicas no ECAD e cuida para esse valor chegar na sua conta.</p>
+      <div class="hero-acoes">
+        <a class="btn btn-latao" data-zap href="https://wa.me/5584988087189">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Saber se tenho valores a receber
+        </a>
+        <small>Conversa direta com o Roberto, pelo WhatsApp. Sem custo para perguntar.</small>
+      </div>
+    </div>
+    <div class="hero-foto">
+      <div class="selo" aria-hidden="true">
+        <div class="selo-fundo"></div>
+        <svg viewBox="0 0 132 132"><defs><path id="circ" d="M66 66 m-52 0 a52 52 0 1 1 104 0 a52 52 0 1 1 -104 0"/></defs><text><textPath href="#circ" textLength="322" lengthAdjust="spacing">LUNARTS EDIÇÕES MUSICAIS · NATAL RN · DIREITOS AUTORAIS · </textPath></text></svg>
+      </div>
+      <figure>
+        <img src="/assets/img/hero-roberto.webp" alt="Roberto Luna sentado em um banquinho com o violão apoiado no colo" width="588" height="1100" fetchpriority="high">
+        <div class="faixas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto" aria-label="Por que isso importa">
+  <div class="wrap">
+    <p id="manifesto">Toda vez que uma música toca no rádio, na igreja, no show ou no streaming, ela gera um valor. Esse valor tem dono. E o dono é <span data-d>quem escreveu, cantou e gravou.</span></p>
+  </div>
+</section>
+
+<section class="sec" id="servicos" aria-labelledby="h-serv">
+  <div class="wrap">
+    <div class="cab">
+      <h2 class="titulo" id="h-serv" data-palavras>Você cuida da música. <em>A parte chata</em> fica com a gente.</h2>
+      <p class="sub">O cadastro no ECAD e nas associações tem regra, prazo e formulário. A Lunarts resolve tudo isso por você, do primeiro registro ao acompanhamento dos pagamentos.</p>
+    </div>
+    <div class="pilha" id="pilha">
+      <article class="card">
+        <div class="n">01</div>
+        <h3>Registro das suas músicas no ECAD</h3>
+        <div>
+          <p>Cadastramos cada obra com os dados certos: autores, intérpretes, músicos e produtor. Música bem registrada é música que pode gerar pagamento.</p>
+          <div class="para-quem"><span>Compositor</span><span>Intérprete</span><span>Músico</span><span>Produtor fonográfico</span></div>
+        </div>
+      </article>
+      <article class="card escuro">
+        <div class="n">02</div>
+        <h3>Descobrir se há dinheiro parado no seu nome</h3>
+        <p>Muita gente tem valores retidos porque o cadastro está incompleto ou nunca foi feito. Verificamos o seu caso e dizemos com clareza o que existe para receber.</p>
+      </article>
+      <article class="card">
+        <div class="n">03</div>
+        <h3>Seu acervo organizado e documentado</h3>
+        <p>Identificamos e documentamos todas as suas canções em um só lugar. Você sabe o que tem registrado, quem gravou e onde cada música está tocando.</p>
+      </article>
+      <article class="card escuro">
+        <div class="n">04</div>
+        <h3>Acompanhamento contínuo dos seus direitos</h3>
+        <p>Depois do registro, seguimos monitorando e administrando o acervo. Música nova gravada? Entra no cadastro. Valor que não caiu? A gente corre atrás.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-verde" id="como-funciona" aria-labelledby="h-como">
+  <div class="wrap">
+    <div class="cab">
+      <h2 class="titulo" id="h-como" data-palavras>Do WhatsApp até o <em>valor na sua conta</em>, em quatro passos.</h2>
+      <p class="sub">Tudo pode ser feito a distância, por WhatsApp e e-mail. Você não precisa sair de casa nem entender de burocracia.</p>
+    </div>
+    <div class="linha" id="linha">
+      <span class="progresso" aria-hidden="true"></span>
+      <div class="passo"><span class="t">Passo 1</span><b>Você chama no WhatsApp</b><p>Conta quais músicas compôs, gravou ou interpretou. O Roberto responde pessoalmente.</p></div>
+      <div class="passo"><span class="t">Passo 2</span><b>Levantamos o seu acervo</b><p>Verificamos o que já está cadastrado, o que falta e se existem valores parados no seu nome.</p></div>
+      <div class="passo"><span class="t">Passo 3</span><b>Registramos tudo no ECAD</b><p>Fazemos o cadastro das obras pela associação, com os dados corretos de cada participante.</p></div>
+      <div class="passo"><span class="t">Passo 4</span><b>Você passa a receber</b><p>A música toca, o ECAD arrecada, a associação repassa e o valor cai na sua conta.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="pauta-sec" aria-hidden="true"><div class="pauta"></div></div>
+
+<section class="sec" id="diferenciais" aria-labelledby="h-dif">
+  <div class="wrap">
+    <div class="cab">
+      <h2 class="titulo" id="h-dif" data-palavras>Quem cuida dos seus direitos <em>também escreve canções.</em></h2>
+      <p class="sub">A Lunarts nasceu de um compositor que sabe o valor de cada música. Por isso o atendimento é próximo e o cuidado é de quem entende o artista por dentro.</p>
+    </div>
+    <div class="bento">
+      <article class="b b1 rev">
+        <img src="/assets/img/roberto-terno.webp" alt="Roberto Luna de terno, tocando violão e cantando ao microfone" width="1024" height="1024" loading="lazy">
+        <div class="txt">
+          <h3>Um músico do outro lado da conversa</h3>
+          <p>Roberto Luna canta e compõe desde os anos 80. Ele sabe o trabalho que dá escrever, arranjar e gravar uma música, e trata o seu acervo com esse respeito.</p>
+        </div>
+      </article>
+      <article class="b b2 rev">
+        <svg class="ico" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M30 4c-8 2-15 9-18 17l-2 7 6-3c7-4 12-11 14-21Z"/><path d="M10 28 6 32"/></svg>
+        <h3>Parceria com Rogério Lambiet</h3>
+        <p>A Lunarts trabalha junto com Rogério Lambiet, um dos maiores conhecedores de direitos autorais musicais do Brasil.</p>
+      </article>
+      <article class="b b3 rev">
+        <h3>Presença na AMAR</h3>
+        <p>Acompanhamos de perto o trabalho da associação que repassa os valores arrecadados pelo ECAD aos titulares.</p>
+      </article>
+      <article class="b b4 rev">
+        <h3>Atendimento direto</h3>
+        <p>Você fala com o Roberto, não com uma central. Pergunta pelo WhatsApp e recebe resposta de quem conhece o seu caso.</p>
+      </article>
+      <article class="b b5 rev">
+        <div class="grande">Lei 9.610</div>
+        <p>A Lei de Direitos Autorais garante que toda execução pública da sua música seja paga. Nós cuidamos para que essa lei funcione a seu favor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-papel" id="artistas" aria-labelledby="h-art">
+  <div class="wrap">
+    <div class="cab">
+      <h2 class="titulo" id="h-art" data-palavras>Canções que já são <em>cuidadas pela Lunarts.</em></h2>
+      <p class="sub">Cantores e compositores que confiaram suas obras à Lunarts.</p>
+    </div>
+    <ul class="artistas">
+      <li><span>Leandro Borges</span></li>
+      <li><span>Samuel Mariano</span></li>
+      <li><span>Cícero Nogueira</span></li>
+      <li><span>Jônatas Fonseca</span></li>
+      <li><span>Rayanne Vanessa</span></li>
+      <li><span>Eunice Ferreira</span></li>
+      <li><span>Shirley Carvalho</span></li>
+      <li><span>Alice Maciel</span></li>
+      <li><span>Kleyton Queiroz</span></li>
+      <li><span>Gisele Nascimento</span></li>
+      <li><span>Júnior Acordeon</span></li>
+      <li><span>Mayara Silva</span></li>
+      <li><span>Josué dos Anjos</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="depoimentos" aria-labelledby="h-dep">
+  <div class="wrap">
+    <h2 class="sr" id="h-dep">Depoimentos</h2>
+    <div class="depo rev">
+      <div class="aspas" aria-hidden="true">“</div>
+      <blockquote>
+        <p>É maravilhoso você estar em casa e entrar um dinheiro na sua conta de músicas que foram tocadas por aí afora, nas rádios.</p>
+        <footer><b>Samuel Mariano</b>Cantor e compositor, João Pessoa/PB</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="pauta-sec" aria-hidden="true"><div class="pauta"></div></div>
+
+<section class="sec" id="sobre" aria-labelledby="h-sobre">
+  <div class="wrap">
+    <div class="sobre">
+      <figure class="moldura rev">
+        <div class="painel"><img src="/assets/img/sobre-roberto.webp" alt="Roberto Luna sorrindo e apontando para o lado" width="895" height="1000" loading="lazy"></div>
+        <figcaption>Roberto Luna, fundador da Lunarts.</figcaption>
+      </figure>
+      <div>
+        <h2 class="titulo" data-palavras>Mais de 1.570 canções escritas. <em>Agora ele cuida das suas.</em></h2>
+        <p class="sub">Roberto Luna começou a carreira de cantor e compositor nos anos 80. Gravou 2 LPs e 7 CDs, e muitas das suas músicas foram entregues a outros intérpretes como gratidão pelo dom que recebeu.</p>
+        <p class="sub">Hoje a maior dedicação dele é ajudar outros compositores, cantores, músicos e produtores a registrar suas músicas e receber o que é justo pelos direitos autorais.</p>
+        <div class="numeros" id="numeros">
+          <div><div class="num" data-alvo="1570" data-mil>0</div><span class="num-l">músicas de autoria própria</span></div>
+          <div><div class="num" data-alvo="7">0</div><span class="num-l">CDs gravados, além de 2 LPs</span></div>
+          <div><div class="num" data-alvo="80">0</div><span class="num-l">início da carreira, nos anos 80</span></div>
+        </div>
+        <a class="btn btn-linha" data-zap href="https://wa.me/5584988087189">Conversar com o Roberto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-verde" id="contato" aria-labelledby="h-cont">
+  <div class="wrap atend">
+    <div>
+      <h2 class="titulo" id="h-cont" data-palavras>De Natal para <em>todo o Brasil.</em></h2>
+      <p class="sub">A Lunarts fica em Natal, no Rio Grande do Norte, e atende artistas de qualquer estado. Todo o processo pode ser feito pelo WhatsApp e por e-mail.</p>
+    </div>
+    <ul class="contato-lista">
+      <li><span class="k">WhatsApp</span><span class="v"><a data-zap href="https://wa.me/5584988087189">(84) 98808-7189</a></span></li>
+      <li><span class="k">E-mail</span><span class="v email"><a href="mailto:roberto.lunarts@hotmail.com">roberto.lunarts@hotmail.com</a></span></li>
+      <li><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/robertolunarts/" target="_blank" rel="noopener">@robertolunarts</a></span></li>
+      <li><span class="k">Cidade</span><span class="v">Natal, Rio Grande do Norte</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec final" aria-labelledby="h-final">
+  <div class="wrap final-grid">
+    <h2 class="titulo" id="h-final" data-palavras>Sua música merece <em>voltar para você.</em></h2>
+    <div>
+      <p class="sub">Mande uma mensagem e descubra, sem compromisso, se existem direitos autorais esperando por você.</p>
+      <a class="btn btn-latao" data-zap href="https://wa.me/5584988087189">Chamar o Roberto no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <img src="/assets/img/logo-lunarts.webp" alt="Lunarts Edições Musicais" width="120" height="103" loading="lazy">
+    <nav aria-label="Rodapé">
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#sobre">Roberto Luna</a>
+      <a href="https://www.instagram.com/robertolunarts/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p style="margin:0">© <span id="ano">2026</span> Lunarts Edições Musicais. Natal/RN.</p>
+  </div>
+</footer>
+
+<a class="zap" id="zap" data-zap href="https://wa.me/5584988087189" aria-label="Conversar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement, reduz=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Links do WhatsApp com mensagem pronta
+  var msg=encodeURIComponent('Olá, Roberto! Vim pelo site e quero saber se tenho direitos autorais a receber.');
+  d.querySelectorAll('[data-zap]').forEach(function(a){a.href='https://wa.me/5584988087189?text='+msg;a.target='_blank';a.rel='noopener'});
+  d.getElementById('ano').textContent=new Date().getFullYear();
+
+  // Abertura
+  var ab=d.getElementById('abertura');
+  function comecar(){root.classList.add('pronto');}
+  function fechar(){ if(ab.classList.contains('fim'))return; ab.classList.add('fim'); try{sessionStorage.setItem('lunarts-abertura','1')}catch(e){} setTimeout(comecar,250); }
+  if(root.classList.contains('sem-abertura')){ requestAnimationFrame(comecar); }
+  else { ab.addEventListener('click',fechar); setTimeout(fechar,1450); }
+
+  // Navbar
+  var nav=d.getElementById('nav'), mb=nav.querySelector('.menu-btn');
+  function navScroll(){ nav.classList.toggle('solida', scrollY>40); }
+  addEventListener('scroll',navScroll,{passive:true}); navScroll();
+  mb.addEventListener('click',function(){ var a=nav.classList.toggle('aberto'); mb.setAttribute('aria-expanded',a); mb.setAttribute('aria-label',a?'Fechar menu':'Abrir menu'); });
+  nav.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('aberto');mb.setAttribute('aria-expanded','false');})});
+
+  // Títulos palavra por palavra
+  d.querySelectorAll('[data-palavras]').forEach(function(h){
+    var i=0;
+    (function walk(n){
+      Array.from(n.childNodes).forEach(function(c){
+        if(c.nodeType===3){
+          var f=d.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(function(p){
+            if(!p)return;
+            if(/^\s+$/.test(p)){f.appendChild(d.createTextNode(p));return;}
+            var s=d.createElement('span'); s.className='palavra'; s.textContent=p; s.style.transitionDelay=(i++*55)+'ms'; f.appendChild(s);
+          });
+          n.replaceChild(f,c);
+        } else if(c.nodeType===1){ walk(c); }
+      });
+    })(h);
+  });
+
+  // Revelar ao entrar na tela
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target);} })},{rootMargin:'0px 0px -12% 0px'});
+  d.querySelectorAll('[data-palavras],.rev,#linha').forEach(function(el){io.observe(el)});
+
+  // Linha do tempo: acende os passos em sequência
+  var passos=d.querySelectorAll('.passo');
+  new IntersectionObserver(function(es,o){ if(es[0].isIntersecting){ passos.forEach(function(p,k){ setTimeout(function(){p.classList.add('on')}, reduz?0:350+k*380); }); o.disconnect(); } },{rootMargin:'0px 0px -20% 0px'}).observe(d.getElementById('linha'));
+
+  // Odômetro
+  function fmt(n,mil){ return mil? n.toLocaleString('pt-BR') : String(n); }
+  new IntersectionObserver(function(es,o){
+    if(!es[0].isIntersecting)return; o.disconnect();
+    d.querySelectorAll('.num').forEach(function(el){
+      var alvo=+el.dataset.alvo, pre=el.dataset.pre||'', mil='mil' in el.dataset, t0=null, dur=reduz?1:1600;
+      function step(t){ if(!t0)t0=t; var p=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-p,4); el.textContent=pre+fmt(Math.round(alvo*e),mil); if(p<1)requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    });
+  },{rootMargin:'0px 0px -15% 0px'}).observe(d.getElementById('numeros'));
+
+  // Manifesto: texto que se preenche com a rolagem
+  var man=d.getElementById('manifesto'), ws=[];
+  (function(){
+    var dest=man.querySelector('[data-d]'), frag=d.createDocumentFragment();
+    Array.from(man.childNodes).forEach(function(c){
+      var destaque=(c===dest), txt=c.textContent;
+      txt.split(/(\s+)/).forEach(function(p){
+        if(!p)return;
+        if(/^\s+$/.test(p)){frag.appendChild(d.createTextNode(p));return;}
+        var s=d.createElement('span'); s.className='w'+(destaque?' d':''); s.textContent=p; frag.appendChild(s); ws.push(s);
+      });
+    });
+    man.textContent=''; man.appendChild(frag);
+  })();
+
+  // Serviços: cartões que empilham (só desktop)
+  var cards=Array.from(d.querySelectorAll('.card')), desk=matchMedia('(min-width:1001px)');
+
+  var tick=false;
+  function onScroll(){
+    if(tick)return; tick=true;
+    requestAnimationFrame(function(){
+      tick=false;
+      var vh=innerHeight, r=man.getBoundingClientRect();
+      var prog=Math.min(1,Math.max(0,(vh*0.85-r.top)/(r.height+vh*0.35)));
+      var n=Math.round(prog*ws.length);
+      for(var i=0;i<ws.length;i++) ws[i].classList.toggle('on', i<n);
+      if(desk.matches && !reduz){
+        for(var k=0;k<cards.length-1;k++){
+          var prox=cards[k+1].getBoundingClientRect(), cur=cards[k].getBoundingClientRect();
+          var sobre=Math.min(1,Math.max(0,(cur.bottom-prox.top)/cur.height));
+          cards[k].style.transform='scale('+(1-sobre*0.05)+')';
+          cards[k].style.filter='brightness('+(1-sobre*0.25)+')';
+        }
+      }
+      // botão do WhatsApp some na chamada final e no rodapé
+      var rod=d.querySelector('.rodape').getBoundingClientRect();
+      d.getElementById('zap').classList.toggle('oculto', rod.top < vh-40 || scrollY < vh*0.6);
+    });
+  }
+  if(reduz){ ws.forEach(function(w){w.classList.add('on')}); }
+  addEventListener('scroll',onScroll,{passive:true}); addEventListener('resize',onScroll); onScroll();
+})();
+</script>
+</body>
+</html>
